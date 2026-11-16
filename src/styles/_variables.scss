@@ -1,0 +1,25 @@
+/* =========================================
+   WEDDING THEME VARIABLES
+========================================= */
+
+:root {
+  --emerald: #073e32;
+  --emerald-dark: #052f27;
+  --emerald-light: #285b4f;
+
+  --wedding-gold: #d3af55;
+  --wedding-gold-light: #e8d29a;
+  --wedding-ivory: #f7f1e7;
+
+  /* Legacy variable compatibility */
+  --black: var(--emerald-dark);
+  --charcoal: var(--emerald);
+  --gold: var(--wedding-gold);
+  --gold-light: var(--wedding-gold-light);
+  --cream: var(--wedding-ivory);
+  --muted: #c7cfc3;
+
+  /* Envelope dimensions */
+  --envelope-width: min(82vw, 350px);
+  --envelope-height: calc(var(--envelope-width) * 0.65);
+}

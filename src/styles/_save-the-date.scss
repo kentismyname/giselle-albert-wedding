@@ -1,0 +1,78 @@
+/* =========================================
+   PHASE 3 - SAVE THE DATE
+========================================= */
+
+.save-date-section {
+  padding: 95px 0 110px;
+  background: linear-gradient(
+    180deg,
+    #052f27,
+    #073e32
+  );
+  text-align: center;
+
+  .main-gold-divider {
+    margin: 28px 0 45px;
+  }
+}
+
+.save-date-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 45px 25px;
+  border: 1px solid rgba(211, 175, 85, 0.4);
+  border-radius: 18px;
+  background: rgba(247, 241, 231, 0.045);
+}
+
+.save-date-icon {
+  margin-bottom: 22px;
+  color: var(--wedding-gold);
+}
+
+.save-date-month {
+  margin: 0;
+  color: var(--wedding-gold);
+  font-size: 14px;
+  letter-spacing: 5px;
+}
+
+.save-date-number {
+  margin: 8px 0;
+  color: var(--wedding-ivory);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(100px, 26vw, 145px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.save-date-year {
+  margin: 0;
+  color: var(--wedding-gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 43px;
+}
+
+.save-date-line {
+  width: 65px;
+  height: 1px;
+  margin: 30px auto;
+  background: var(--wedding-gold);
+}
+
+.save-date-couple {
+  margin: 0;
+  color: var(--wedding-ivory);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 35px;
+  font-style: italic;
+}
+
+.save-date-location {
+  margin: 14px 0 0;
+  color: rgba(247, 241, 231, 0.65);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

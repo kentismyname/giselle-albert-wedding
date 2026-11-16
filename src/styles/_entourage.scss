@@ -1,0 +1,582 @@
+
+/* =========================================
+   PHASE 07 — WEDDING ENTOURAGE
+========================================= */
+
+.entourage-section {
+  position: relative;
+  width: 100%;
+  padding: 115px 22px 125px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(211, 175, 85, 0.08),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #052f27 0%,
+      #073e32 45%,
+      #052f27 100%
+    );
+
+  color: var(--wedding-ivory);
+  text-align: center;
+}
+
+.entourage-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.entourage-main-heading {
+  margin-bottom: 90px;
+
+  .main-gold-divider {
+    margin: 30px auto 0;
+  }
+
+  h2 {
+    margin: 15px 0 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 8vw, 82px);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+.entourage-eyebrow {
+  margin: 0;
+  color: var(--wedding-gold);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.entourage-main-subtitle {
+  margin: 20px 0 0;
+
+  color: var(--wedding-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(21px, 4vw, 28px);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* =========================================
+   GROUPS
+========================================= */
+
+.entourage-group {
+  margin-bottom: 100px;
+}
+
+.entourage-group--last {
+  margin-bottom: 0;
+}
+
+.entourage-group-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 40px;
+
+  color: var(--wedding-gold);
+
+  h3 {
+    margin: 0;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  p {
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-style: italic;
+  }
+}
+
+.entourage-group-eyebrow {
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   PRINCIPAL SPONSORS
+========================================= */
+
+.entourage-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.entourage-sponsor-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-width: 0;
+  min-height: 175px;
+  padding: 25px 18px;
+
+  border: 1px solid rgba(211, 175, 85, 0.25);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: var(--wedding-gold);
+
+  p {
+    margin: 0;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(20px, 2.5vw, 27px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+}
+
+.entourage-pair-number {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   HONOR ATTENDANTS
+========================================= */
+
+.entourage-honor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.entourage-honor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 240px;
+  padding: 35px 20px;
+
+  border: 1px solid rgba(211, 175, 85, 0.45);
+  border-radius: 12px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(211, 175, 85, 0.12),
+      transparent 70%
+    ),
+    #104639;
+
+  > span {
+    margin-top: 20px;
+
+    color: var(--wedding-gold);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin: 12px 0 0;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(28px, 4vw, 37px);
+    font-weight: 400;
+  }
+}
+
+.entourage-honor-icon {
+  color: var(--wedding-gold);
+}
+
+.entourage-mini-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 22px;
+
+  color: var(--wedding-gold);
+
+  span {
+    width: 35px;
+    height: 1px;
+    background: rgba(211, 175, 85, 0.4);
+  }
+}
+
+/* =========================================
+   BRIDESMAIDS & GROOMSMEN
+========================================= */
+
+.entourage-party-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.entourage-party-card {
+  padding: 45px 25px;
+
+  border: 1px solid rgba(211, 175, 85, 0.3);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  h4 {
+    margin: 0;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 400;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  li {
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+}
+
+.entourage-party-subtitle {
+  display: block;
+  margin-top: 8px;
+
+  color: var(--wedding-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.entourage-party-divider {
+  width: 90px;
+  height: 1px;
+
+  margin: 28px auto;
+
+  background: var(--wedding-gold);
+}
+
+/* =========================================
+   SECONDARY SPONSORS
+========================================= */
+
+.entourage-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.entourage-secondary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  padding: 38px 20px;
+
+  border: 1px solid rgba(211, 175, 85, 0.3);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  h4 {
+    margin: 20px 0 8px;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  > span {
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0 0 12px;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+.entourage-secondary-icon {
+  color: var(--wedding-gold);
+}
+
+.entourage-secondary-divider {
+  width: 65px;
+  height: 1px;
+
+  margin: 25px auto;
+
+  background: rgba(211, 175, 85, 0.5);
+}
+
+/* =========================================
+   LITTLE ENTOURAGE
+========================================= */
+
+.entourage-little-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.entourage-little-card {
+  min-width: 0;
+  padding: 35px 15px;
+
+  border: 1px solid rgba(211, 175, 85, 0.3);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: var(--wedding-gold);
+
+  h4 {
+    margin: 18px 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0 0 9px;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}
+
+/* =========================================
+   ENDING
+========================================= */
+
+.entourage-ending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  max-width: 650px;
+  margin: 95px auto 0;
+
+  color: var(--wedding-gold);
+
+  p {
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(23px, 4vw, 31px);
+    font-style: italic;
+    line-height: 1.45;
+  }
+
+  span {
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .entourage-secondary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .entourage-little-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .entourage-section {
+    padding: 85px 15px 95px;
+  }
+
+  .entourage-main-heading {
+    margin-bottom: 70px;
+  }
+
+  .entourage-group {
+    margin-bottom: 75px;
+  }
+
+  .entourage-group--last {
+    margin-bottom: 0;
+  }
+
+  .entourage-group-heading {
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: 39px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .entourage-sponsors-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .entourage-sponsor-pair {
+    min-height: 155px;
+    padding: 23px 15px;
+
+    p {
+      font-size: 25px;
+    }
+  }
+
+  .entourage-honor-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .entourage-honor-card {
+    min-height: 210px;
+  }
+
+  .entourage-party-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .entourage-party-card {
+    padding: 38px 20px;
+
+    h4 {
+      font-size: 38px;
+    }
+  }
+
+  .entourage-secondary-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .entourage-secondary-card {
+    padding: 35px 20px;
+  }
+
+  .entourage-little-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .entourage-little-card {
+    padding: 28px 10px;
+
+    h4 {
+      font-size: 23px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .entourage-ending {
+    margin-top: 75px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 370px) {
+  .entourage-little-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .entourage-group-heading h3 {
+    font-size: 35px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .entourage-section * {
+    scroll-behavior: auto;
+  }
+}

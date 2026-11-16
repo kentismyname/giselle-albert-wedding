@@ -1,0 +1,373 @@
+
+/* =========================================
+   PHASE 10 — FINAL POLISH
+========================================= */
+
+.final-polish-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 750px;
+  padding: 110px 22px 45px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      #175447 0%,
+      #073e32 50%,
+      #031f1a 100%
+    );
+
+  color: var(--wedding-ivory);
+  text-align: center;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.final-polish-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 650px;
+  height: 650px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(211, 175, 85, 0.09),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.final-polish-frame {
+  position: absolute;
+  inset: 25px;
+
+  border: 1px solid rgba(211, 175, 85, 0.25);
+
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    border-color: var(--wedding-gold);
+    border-style: solid;
+
+    opacity: 0.8;
+  }
+
+  &::before {
+    top: -1px;
+    left: -1px;
+
+    border-width: 2px 0 0 2px;
+  }
+
+  &::after {
+    right: -1px;
+    bottom: -1px;
+
+    border-width: 0 2px 2px 0;
+  }
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.final-polish-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   ORNAMENT
+========================================= */
+
+.final-polish-ornament {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  color: var(--wedding-gold);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.final-polish-heading {
+  h2 {
+    margin: 15px 0 0;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 11vw, 110px);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .main-gold-divider {
+    margin: 35px auto 0;
+  }
+}
+
+.final-polish-eyebrow {
+  margin: 0;
+
+  color: var(--wedding-gold);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.final-polish-message {
+  max-width: 580px;
+  margin: 30px auto 0;
+
+  color: var(--wedding-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(23px, 4vw, 31px);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* =========================================
+   COUPLE NAMES
+========================================= */
+
+.final-polish-couple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin-top: 55px;
+}
+
+.final-polish-name {
+  color: var(--wedding-ivory);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(46px, 8vw, 78px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.final-polish-ampersand {
+  color: var(--wedding-gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(40px, 7vw, 65px);
+  font-style: italic;
+}
+
+/* =========================================
+   CLOSING QUOTE
+========================================= */
+
+.final-polish-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 35px;
+
+  color: var(--wedding-gold);
+
+  p {
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-style: italic;
+  }
+}
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.final-polish-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 55px;
+  padding: 16px 25px;
+
+  border: 1px solid var(--wedding-gold);
+  border-radius: 6px;
+
+  background: transparent;
+  color: var(--wedding-gold);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+
+  &:hover {
+    background: var(--wedding-gold);
+    color: #073e32;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--wedding-gold-light);
+    outline-offset: 4px;
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.final-polish-footer {
+  margin-top: 90px;
+
+  p {
+    margin: 22px 0 10px;
+
+    color: var(--wedding-gold);
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  span {
+    color: rgba(247, 241, 231, 0.65);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+  }
+}
+
+.final-polish-footer-line {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  margin: 0 auto;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(211, 175, 85, 0.5),
+    transparent
+  );
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .final-polish-section {
+    min-height: 700px;
+    padding: 95px 25px 45px;
+  }
+
+  .final-polish-frame {
+    inset: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .final-polish-section {
+    min-height: 100svh;
+    padding: 95px 35px 45px;
+  }
+
+  .final-polish-frame {
+    inset: 12px;
+  }
+
+  .final-polish-heading h2 {
+    font-size: 70px;
+  }
+
+  .final-polish-message {
+    font-size: 24px;
+  }
+
+  .final-polish-couple {
+    gap: 8px;
+    margin-top: 45px;
+  }
+
+  .final-polish-name {
+    font-size: clamp(40px, 11vw, 60px);
+  }
+
+  .final-polish-ampersand {
+    font-size: 43px;
+  }
+
+  .final-polish-quote p {
+    font-size: 23px;
+  }
+
+  .final-polish-footer {
+    margin-top: 75px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 370px) {
+  .final-polish-section {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .final-polish-heading h2 {
+    font-size: 60px;
+  }
+
+  .final-polish-name {
+    font-size: 38px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .final-polish-back-to-top {
+    transition: none;
+  }
+}

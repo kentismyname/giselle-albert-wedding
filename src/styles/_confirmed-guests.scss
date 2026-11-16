@@ -1,0 +1,432 @@
+/* =========================================
+   PHASE 08 — CONFIRMED GUESTS
+========================================= */
+
+.confirmed-guests-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 20px 110px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(211, 175, 85, 0.07),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #052f27 0%,
+      #073e32 55%,
+      #052f27 100%
+    );
+
+  color: var(--wedding-ivory);
+  text-align: center;
+}
+
+.confirmed-guests-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.confirmed-guests-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 55px;
+
+  > svg {
+    margin-bottom: 20px;
+    color: var(--wedding-gold);
+  }
+
+  h2 {
+    margin: 15px 0 0;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 8vw, 78px);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .main-gold-divider {
+    margin: 30px auto 0;
+  }
+}
+
+.confirmed-guests-eyebrow {
+  margin: 0;
+
+  color: var(--wedding-gold);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+}
+
+.confirmed-guests-subtitle {
+  max-width: 600px;
+  margin: 20px auto 0;
+
+  color: var(--wedding-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(21px, 4vw, 28px);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.confirmed-guests-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  max-width: 700px;
+  margin: 0 auto 45px;
+}
+
+.confirmed-guests-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  padding: 30px 20px;
+
+  border: 1px solid rgba(211, 175, 85, 0.35);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  > svg {
+    color: var(--wedding-gold);
+  }
+
+  strong {
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  span {
+    color: var(--wedding-gold-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.confirmed-guests-toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.confirmed-guests-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  max-width: 440px;
+  min-height: 52px;
+  padding: 0 18px;
+
+  border: 1px solid rgba(211, 175, 85, 0.35);
+  border-radius: 7px;
+
+  background: rgba(3, 30, 24, 0.4);
+  color: var(--wedding-gold);
+
+  &:focus-within {
+    border-color: var(--wedding-gold);
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    height: 50px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: var(--wedding-ivory);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    &::placeholder {
+      color: rgba(247, 241, 231, 0.45);
+    }
+  }
+}
+
+/* =========================================
+   GUEST GRID
+========================================= */
+
+.confirmed-guests-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.confirmed-guest-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  padding: 28px 14px;
+
+  border: 1px solid rgba(211, 175, 85, 0.28);
+  border-radius: 12px;
+
+  background: #104639;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    border-color: rgba(211, 175, 85, 0.7);
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    margin: 17px 0 7px;
+
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+  }
+
+  > p {
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+  }
+}
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.confirmed-guest-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 55px;
+  height: 55px;
+
+  border: 1px solid rgba(211, 175, 85, 0.45);
+  border-radius: 50%;
+
+  background: rgba(211, 175, 85, 0.08);
+  color: var(--wedding-gold);
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.confirmed-guest-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 20px;
+
+  color: var(--wedding-gold);
+
+  span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.confirmed-guests-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  padding: 45px 20px;
+
+  color: var(--wedding-gold);
+
+  p {
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+  }
+}
+
+/* =========================================
+   SHOW MORE
+========================================= */
+
+.confirmed-guests-show-more {
+  margin-top: 35px;
+  padding: 15px 25px;
+
+  border: 1px solid var(--wedding-gold);
+  border-radius: 6px;
+
+  background: transparent;
+  color: var(--wedding-gold);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  &:hover {
+    background: var(--wedding-gold);
+    color: #073e32;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--wedding-gold-light);
+    outline-offset: 4px;
+  }
+}
+
+/* =========================================
+   ENDING
+========================================= */
+
+.confirmed-guests-ending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 70px;
+
+  color: var(--wedding-gold);
+
+  p {
+    max-width: 550px;
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-style: italic;
+    line-height: 1.4;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .confirmed-guests-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .confirmed-guests-section {
+    padding: 85px 15px 95px;
+  }
+
+  .confirmed-guests-stats {
+    gap: 12px;
+  }
+
+  .confirmed-guests-stat {
+    padding: 25px 12px;
+
+    strong {
+      font-size: 46px;
+    }
+
+    span {
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .confirmed-guests-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .confirmed-guest-card {
+    padding: 25px 10px;
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .confirmed-guests-ending {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .confirmed-guests-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .confirmed-guest-card {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* =========================================
+   SHARED GOLD DIVIDER
+========================================= */
+
+.main-gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: var(--wedding-gold);
+
+  span {
+    width: 70px;
+    max-width: 22vw;
+    height: 1px;
+    background: rgba(211, 175, 85, 0.5);
+  }
+}

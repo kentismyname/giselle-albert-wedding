@@ -1,0 +1,61 @@
+/* =========================================
+   PHASE 3 - COUNTDOWN SECTION
+========================================= */
+
+.countdown-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85svh;
+  padding: 100px 0;
+
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    #175447 0%,
+    #073e32 65%,
+    #052f27 100%
+  );
+
+  text-align: center;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(7px, 2.5vw, 18px);
+  width: 100%;
+  max-width: 470px;
+  margin: 50px auto 55px;
+}
+
+.countdown-item {
+  min-width: 0;
+
+  > p {
+    margin: 12px 0 0;
+    color: var(--wedding-gold);
+    font-size: clamp(8px, 2.2vw, 11px);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+}
+
+.countdown-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 100%;
+  border: 1px solid rgba(211, 175, 85, 0.45);
+  border-radius: 15px;
+  background: rgba(247, 241, 231, 0.06);
+
+  span {
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(27px, 7vw, 47px);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+}

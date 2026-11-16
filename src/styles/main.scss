@@ -1,0 +1,43 @@
+/* =========================================
+   GISELLE & ALBERT
+   WEDDING INVITATION
+
+   MAIN STYLESHEET
+   EMERALD GREEN & GOLD THEME
+========================================= */
+
+/* GLOBAL */
+@use "variables";
+@use "global";
+
+/* SHARED COMPONENTS */
+@use "gold-divider";
+@use "floating-navigation";
+@use "music-player";
+
+/* PHASE 1 - WELCOME */
+@use "welcome";
+
+/* PHASE 2 - ENVELOPE */
+@use "envelope";
+
+/* PHASE 3 - MAIN INVITATION */
+@use "hero";
+@use "countdown";
+@use "save-the-date";
+
+/* PHASE 4 -*/
+@use "love-story";
+
+@use "gallery";
+
+@use "wedding-details";
+@use "entourage";
+@use "rsvp";
+@use "guest-information";
+@use "final-polish";
+@use "confirmed-guests";
+
+
+/* RESPONSIVE OVERRIDES */
+@use "responsive";

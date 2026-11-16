@@ -1,0 +1,39 @@
+/* =========================================
+   BACKGROUND MUSIC CONTROL
+========================================= */
+
+.music-toggle {
+  position: fixed;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(25px, env(safe-area-inset-bottom));
+  z-index: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid rgba(211, 175, 85, 0.6);
+  border-radius: 50%;
+
+  background: rgba(5, 47, 39, 0.96);
+  color: var(--wedding-gold);
+
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    background: var(--emerald-light);
+    box-shadow: 0 0 25px rgba(211, 175, 85, 0.18);
+    transform: scale(1.05);
+  }
+}

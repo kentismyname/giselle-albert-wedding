@@ -1,0 +1,265 @@
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 375px) {
+  :root {
+    --envelope-width: 85vw;
+  }
+
+  .welcome-screen {
+    padding: 55px 17px;
+  }
+
+  .couple-names {
+    font-size: clamp(54px, 15vw, 65px);
+  }
+
+  .ornament {
+    margin-bottom: 20px;
+  }
+
+  .wedding-date {
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .open-button {
+    margin-top: 32px;
+  }
+
+  .envelope-heading {
+    margin-bottom: 30px;
+  }
+
+  .envelope-scene {
+    height: calc(var(--envelope-height) + 155px);
+  }
+
+  .envelope-bottom-text p {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-names {
+    font-size: clamp(43px, 12vw, 52px);
+  }
+
+  .main-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .countdown-grid {
+    gap: 7px;
+  }
+
+  .countdown-box {
+    border-radius: 10px;
+  }
+}
+
+/* =========================================
+   SHORT SCREENS
+========================================= */
+
+@media (max-height: 700px) {
+  .welcome-screen {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .ornament {
+    margin-bottom: 16px;
+  }
+
+  .couple-names {
+    margin: 15px 0;
+  }
+
+  .gold-divider {
+    margin: 15px auto 20px;
+  }
+
+  .wedding-date {
+    margin-top: 24px;
+  }
+
+  .open-button {
+    margin-top: 30px;
+  }
+
+  .envelope-screen {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .envelope-scene {
+    height: calc(var(--envelope-height) + 130px);
+  }
+
+  .main-hero {
+    padding-top: 100px;
+    padding-bottom: 45px;
+  }
+
+  .hero-heart {
+    margin: 15px auto;
+  }
+
+  .hero-scroll-button {
+    margin-top: 22px;
+  }
+}
+
+/* =========================================
+   TABLET / DESKTOP
+========================================= */
+
+@media (min-width: 768px) {
+  .welcome-screen {
+    padding: 80px 40px;
+  }
+
+  .corner {
+    width: 65px;
+    height: 65px;
+  }
+
+  .corner-tl {
+    top: 35px;
+    left: 35px;
+  }
+
+  .corner-tr {
+    top: 35px;
+    right: 35px;
+  }
+
+  .corner-bl {
+    bottom: 35px;
+    left: 35px;
+  }
+
+  .corner-br {
+    bottom: 35px;
+    right: 35px;
+  }
+
+  .main-hero {
+    padding: 120px 40px 80px;
+  }
+
+  .section-container {
+    padding: 0 40px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================
+   PHASE 10 — GLOBAL FINAL POLISH
+========================================= */
+
+/* Prevent horizontal layout overflow */
+
+html,
+body,
+#root {
+  max-width: 100%;
+}
+
+/* Keep scrollbar hidden while allowing scrolling */
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Consistent scroll destination offset */
+
+#home,
+#countdown,
+#save-date,
+#love-story,
+#gallery,
+#wedding-details,
+#entourage,
+#rsvp,
+#guest-information {
+  scroll-margin-top: 75px;
+}
+
+/* Accessible keyboard focus */
+
+:where(
+  button,
+  a,
+  input,
+  select,
+  textarea
+):focus-visible {
+  outline: 2px solid var(--wedding-gold);
+  outline-offset: 3px;
+}
+
+/* Comfortable touch targets */
+
+@media (pointer: coarse) {
+  .final-polish-back-to-top,
+  .rsvp-submit-button,
+  .wedding-venue-map-button {
+    min-height: 48px;
+  }
+}
+
+/* Mobile typography and spacing */
+
+@media (max-width: 600px) {
+  #love-story,
+  #gallery,
+  #wedding-details,
+  #entourage,
+  #rsvp,
+  #guest-information {
+    scroll-margin-top: 65px;
+  }
+}
+
+/* Respect accessibility settings */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

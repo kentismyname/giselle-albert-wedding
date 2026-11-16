@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  background: var(--emerald-dark);
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+
+  &:focus-visible {
+    outline: 2px solid var(--wedding-gold-light);
+    outline-offset: 4px;
+  }
+}
+
+/* =========================================
+   APP CONTAINERS
+========================================= */
+
+.wedding-app {
+  width: 100%;
+  min-height: 100svh;
+  background: var(--emerald-dark);
+  color: var(--wedding-ivory);
+}
+
+.main-invitation {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background: var(--emerald);
+  color: var(--wedding-ivory);
+  overflow: clip;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* =========================================
+   SECTION TYPOGRAPHY
+========================================= */
+
+.section-eyebrow {
+  margin: 0 0 16px;
+  color: var(--wedding-gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(43px, 10vw, 75px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.section-subtitle {
+  margin: 18px 0 0;
+  color: rgba(247, 241, 231, 0.72);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(19px, 4.5vw, 25px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.wedding-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 65px 20px;
+  background: #042a22;
+  text-align: center;
+  color: var(--wedding-gold);
+
+  p {
+    margin: 0;
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+  }
+
+  span {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+}
+
+
+/* =========================================
+   HIDE SCROLLBAR GLOBALLY
+   KEEP SCROLLING FUNCTIONAL
+========================================= */
+
+html {
+  overflow-x: hidden;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // Legacy Edge / IE
+}
+
+body {
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

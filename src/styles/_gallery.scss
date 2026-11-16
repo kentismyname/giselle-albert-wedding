@@ -1,0 +1,561 @@
+/* =========================================
+   PHASE 05 — GALLERY
+========================================= */
+
+.gallery-section {
+  position: relative;
+  width: 100%;
+  padding: 110px 22px 120px;
+  overflow: hidden;
+
+  background: radial-gradient(
+    ellipse at 50% 20%,
+    #175447 0%,
+    #073e32 55%,
+    #052f27 100%
+  );
+
+  color: var(--wedding-ivory);
+  text-align: center;
+}
+
+.gallery-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.gallery-heading {
+  margin-bottom: 60px;
+
+  .main-gold-divider {
+    margin: 30px auto 0;
+  }
+}
+
+.gallery-eyebrow {
+  margin: 0;
+  color: var(--wedding-gold);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.gallery-title {
+  margin: 15px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 8vw, 82px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.gallery-subtitle {
+  margin: 20px 0 0;
+
+  color: var(--wedding-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(21px, 4vw, 28px);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* =========================================
+   MASONRY-STYLE GRID
+========================================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: 160px;
+  gap: 16px;
+}
+
+.gallery-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+
+  padding: 0;
+
+  border: 1px solid rgba(211, 175, 85, 0.35);
+  border-radius: 12px;
+
+  background: #104639;
+  cursor: pointer;
+
+  appearance: none;
+  text-align: left;
+
+  &--tall {
+    grid-row: span 2;
+  }
+
+  &--wide {
+    grid-column: span 2;
+  }
+
+  &--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--wedding-gold-light);
+    outline-offset: 4px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.55s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+/* =========================================
+   IMAGE PLACEHOLDER
+========================================= */
+
+.gallery-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(
+    circle at center,
+    #285b4f 0%,
+    #104639 55%,
+    #073e32 100%
+  );
+
+  color: var(--wedding-gold);
+
+  span {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+}
+
+/* =========================================
+   IMAGE HOVER OVERLAY
+========================================= */
+
+.gallery-photo-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  padding: 25px 15px;
+
+  background: linear-gradient(
+    180deg,
+    transparent 25%,
+    rgba(3, 30, 24, 0.85) 100%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.gallery-photo:hover .gallery-photo-overlay,
+.gallery-photo:focus-visible .gallery-photo-overlay {
+  opacity: 1;
+}
+
+.gallery-photo-caption {
+  color: var(--wedding-ivory);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-style: italic;
+  text-align: center;
+}
+
+.gallery-photo-view {
+  color: var(--wedding-gold);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   GALLERY ENDING
+========================================= */
+
+.gallery-ending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 80px;
+
+  color: var(--wedding-gold);
+
+  p {
+    margin: 0;
+
+    color: var(--wedding-gold-light);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(23px, 4vw, 32px);
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  span {
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+  }
+}
+
+/* =========================================
+   LIGHTBOX OVERLAY
+========================================= */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100dvh;
+
+  background: rgba(2, 18, 14, 0.97);
+
+  color: var(--wedding-ivory);
+  isolation: isolate;
+
+    overscroll-behavior: contain;
+  touch-action: pan-x;
+}
+
+/* =========================================
+   LIGHTBOX CONTENT
+========================================= */
+
+.gallery-lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  width: calc(100% - 160px);
+  max-width: 1100px;
+  max-height: calc(100dvh - 110px);
+}
+
+.gallery-lightbox-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-height: calc(100dvh - 180px);
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100dvh - 180px);
+
+    object-fit: contain;
+    border: 1px solid rgba(211, 175, 85, 0.35);
+    border-radius: 6px;
+  }
+}
+
+.gallery-lightbox-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  width: min(70vw, 550px);
+  height: min(55vh, 400px);
+
+  background: radial-gradient(
+    circle at center,
+    #285b4f,
+    #073e32
+  );
+
+  color: var(--wedding-gold);
+
+  span {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.gallery-lightbox-caption {
+  margin: 0;
+
+  color: var(--wedding-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(21px, 4vw, 29px);
+  font-style: italic;
+  text-align: center;
+}
+
+/* =========================================
+   LIGHTBOX CLOSE
+========================================= */
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: max(22px, env(safe-area-inset-top));
+  right: 25px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid rgba(211, 175, 85, 0.5);
+  border-radius: 50%;
+
+  background: rgba(7, 62, 50, 0.8);
+  color: var(--wedding-gold);
+
+  cursor: pointer;
+}
+
+/* =========================================
+   PHOTO COUNTER
+========================================= */
+
+.gallery-lightbox-counter {
+  position: absolute;
+  top: max(35px, env(safe-area-inset-top));
+  left: 50%;
+
+  color: var(--wedding-gold);
+  font-size: 12px;
+  letter-spacing: 3px;
+
+  transform: translateX(-50%);
+}
+
+/* =========================================
+   LIGHTBOX ARROWS
+========================================= */
+
+.gallery-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(211, 175, 85, 0.45);
+  border-radius: 50%;
+
+  background: rgba(7, 62, 50, 0.75);
+  color: var(--wedding-gold);
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    background: rgba(211, 175, 85, 0.2);
+    border-color: var(--wedding-gold);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--wedding-gold-light);
+    outline-offset: 4px;
+  }
+}
+
+.gallery-lightbox-prev {
+  left: 25px;
+}
+
+.gallery-lightbox-next {
+  right: 25px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 150px;
+    gap: 12px;
+  }
+
+  .gallery-lightbox-content {
+    width: calc(100% - 125px);
+  }
+
+  .gallery-lightbox-prev {
+    left: 12px;
+  }
+
+  .gallery-lightbox-next {
+    right: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .gallery-section {
+    padding: 85px 15px 95px;
+  }
+
+  .gallery-heading {
+    margin-bottom: 45px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 115px;
+    gap: 9px;
+  }
+
+  .gallery-photo {
+    border-radius: 8px;
+  }
+
+  .gallery-photo--large,
+  .gallery-photo--wide {
+    grid-column: span 2;
+  }
+
+  .gallery-photo-overlay {
+    padding: 12px 8px;
+  }
+
+  .gallery-photo-caption {
+    font-size: 17px;
+  }
+
+  .gallery-ending {
+    margin-top: 65px;
+  }
+
+  .gallery-lightbox-content {
+    width: calc(100% - 28px);
+    max-height: calc(100dvh - 160px);
+  }
+
+  .gallery-lightbox-image-wrap {
+    max-height: calc(100dvh - 230px);
+
+    img {
+      max-height: calc(100dvh - 230px);
+    }
+  }
+
+  .gallery-lightbox-arrow {
+    top: auto;
+    bottom: max(20px, env(safe-area-inset-bottom));
+
+    width: 45px;
+    height: 45px;
+
+    transform: none;
+  }
+
+  .gallery-lightbox-prev {
+    left: calc(50% - 60px);
+  }
+
+  .gallery-lightbox-next {
+    right: calc(50% - 60px);
+  }
+
+  .gallery-lightbox-close {
+    right: 15px;
+  }
+}
+
+/* =========================================
+   TOUCH DEVICES
+========================================= */
+
+@media (hover: none) {
+  .gallery-photo-overlay {
+    opacity: 1;
+  }
+
+  .gallery-photo-view {
+    display: none;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-photo img,
+  .gallery-photo-overlay,
+  .gallery-lightbox-arrow {
+    transition: none;
+  }
+
+  .gallery-photo:hover img {
+    transform: none;
+  }
+}

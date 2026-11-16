@@ -1,0 +1,324 @@
+/* =========================================
+   PHASE 2 - ENVELOPE SCREEN
+========================================= */
+
+.envelope-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: 45px 16px;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #20594b 0%,
+    #104639 38%,
+    #073e32 70%,
+    #052f27 100%
+  );
+}
+
+.envelope-background-glow {
+  position: absolute;
+  width: min(100vw, 600px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(211, 175, 85, 0.09);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+.envelope-heading {
+  position: relative;
+  z-index: 8;
+  margin-bottom: 55px;
+  text-align: center;
+  pointer-events: none;
+
+  .eyebrow {
+    color: var(--wedding-gold-light);
+  }
+
+  h2 {
+    margin: 10px 0 0;
+    color: var(--wedding-ivory);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(32px, 9vw, 52px);
+    font-weight: 300;
+  }
+}
+
+.envelope-scene {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(var(--envelope-height) + 200px);
+  perspective: 1200px;
+}
+
+.envelope-shadow {
+  position: absolute;
+  bottom: 45px;
+  width: calc(var(--envelope-width) * 0.85);
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  filter: blur(20px);
+}
+
+.envelope-container {
+  position: relative;
+  width: var(--envelope-width);
+  height: var(--envelope-height);
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 15px 22px rgba(0, 0, 0, 0.3));
+  animation: envelope-float 4s ease-in-out infinite;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #f0e7d6;
+  border-radius: 3px;
+  box-shadow: inset 0 0 20px rgba(120, 95, 55, 0.12);
+}
+
+.envelope-letter {
+  position: absolute;
+  z-index: 2;
+  left: 8%;
+  bottom: 7%;
+  width: 84%;
+  height: 90%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fffdf7, #f2e9d9);
+  border: 1px solid #d3bd8d;
+  border-radius: 2px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 1.4s ease;
+}
+
+.letter-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  text-align: center;
+  color: var(--emerald-dark);
+
+  strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 8px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(17px, 5vw, 27px);
+    font-weight: 500;
+
+    span {
+      color: #ad873c;
+      font-style: italic;
+    }
+  }
+}
+
+.letter-heart {
+  margin-bottom: 8px;
+  color: #ad873c;
+}
+
+.letter-small {
+  font-size: clamp(6px, 1.7vw, 8px);
+  letter-spacing: 2px;
+}
+
+.letter-date {
+  font-size: clamp(7px, 1.8vw, 9px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   ENVELOPE FLAP
+========================================= */
+
+.envelope-flap {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 61%;
+  background: linear-gradient(180deg, #f5ecd9, #ddc9a5);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  backface-visibility: visible;
+
+  transition:
+    transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    z-index 0s 0.6s;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.envelope-front-left {
+  position: absolute;
+  inset: 0;
+  background: #e9dbc2;
+  clip-path: polygon(0 0, 52% 55%, 0 100%);
+}
+
+.envelope-front-right {
+  position: absolute;
+  inset: 0;
+  background: #e4d2b2;
+  clip-path: polygon(100% 0, 48% 55%, 100% 100%);
+}
+
+.envelope-front-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #f4e8d1, #e5d4b6);
+  clip-path: polygon(0 100%, 50% 45%, 100% 100%);
+}
+
+/* =========================================
+   WAX SEAL
+========================================= */
+
+.wax-seal {
+  position: absolute;
+  z-index: 7;
+  top: 61%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(43px, 12vw, 55px);
+  height: clamp(43px, 12vw, 55px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle at 30% 25%,
+    #f8e4af,
+    #d3af55 50%,
+    #916a2c 100%
+  );
+
+  box-shadow:
+    0 3px 9px rgba(64, 42, 12, 0.4),
+    inset 0 1px 3px rgba(255, 245, 205, 0.5);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.wax-seal-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76%;
+  height: 76%;
+  border: 1px solid rgba(105, 70, 22, 0.55);
+  border-radius: 50%;
+  color: #684819;
+}
+
+/* =========================================
+   ENVELOPE ANIMATION STAGES
+========================================= */
+
+.stage-sealed .envelope-flap {
+  transform: rotateX(0deg);
+}
+
+.stage-opening,
+.stage-letter,
+.stage-revealing {
+  .wax-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+  }
+}
+
+.stage-letter,
+.stage-revealing {
+  .envelope-letter {
+    transform: translateY(-62%);
+    box-shadow: 0 14px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.stage-revealing .envelope-letter {
+  transform: translateY(-75%) scale(1.08);
+}
+
+@keyframes envelope-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.envelope-bottom-text {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+
+  p {
+    margin: 0;
+    color: var(--wedding-gold-light);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    white-space: nowrap;
+  }
+}
+
+.loading-line {
+  width: 22px;
+  height: 1px;
+  background: var(--wedding-gold);
+  opacity: 0.5;
+}
