@@ -1,12 +1,29 @@
-export const assetUrl = (path) => {
-  const cleanPath = String(path || "").replace(/^\/+/, "");
 
-  return `${import.meta.env.BASE_URL}${cleanPath}`;
-};
 /* =========================================
    GISELLE & ALBERT
    WEDDING INVITATION DATA
 ========================================= */
+
+/* =========================================
+   ASSET URL HELPER
+
+   Supports:
+   - Local Vite development
+   - GitHub Pages project hosting
+   - Production builds
+
+   Assets must be stored in:
+   public/images/
+   public/audio/
+========================================= */
+
+export const assetUrl = (path) => {
+  if (!path) return "";
+
+  const cleanPath = String(path).replace(/^\/+/, "");
+
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
 
 /* =========================================
    MAIN WEDDING INFORMATION
@@ -16,15 +33,14 @@ export const wedding = {
   bride: "Giselle",
   groom: "Albert",
 
-  // IMPORTANT:
-  // Confirm the actual wedding date before publishing.
-  // This is the date from our previous configuration.
+  // Placeholder: confirm actual wedding date.
   date: "2026-11-17",
   time: "10:00",
 
   location: "The Philippines",
 
   heroImage: assetUrl("images/couple-hero.jpg"),
+
   musicFile: assetUrl("audio/wedding-music.mp3"),
 };
 
@@ -73,8 +89,8 @@ export const navigation = [
   { label: "Wedding Details", id: "wedding-details" },
   { label: "Entourage", id: "entourage" },
   { label: "RSVP", id: "rsvp" },
-  { label: "Guest Information", id: "guest-information" },
   { label: "Confirmed Guests", id: "confirmed-guests" },
+  { label: "Guest Information", id: "guest-information" },
 ];
 
 /* =========================================
@@ -88,10 +104,9 @@ export const loveStory = [
     label: "CHAPTER ONE",
     title: "How We Met",
 
-    // Optional date or year
     date: "",
 
-    image: "/images/love-story-1.jpg",
+    image: assetUrl("images/love-story-1.jpg"),
 
     imageAlt: "Giselle and Albert together",
 
@@ -109,7 +124,7 @@ export const loveStory = [
 
     date: "",
 
-    image: "/images/love-story-2.jpg",
+    image: assetUrl("images/love-story-2.jpg"),
 
     imageAlt:
       "A special memory of Giselle and Albert",
@@ -129,7 +144,7 @@ export const loveStory = [
 
     date: "",
 
-    image: "/images/love-story-3.jpg",
+    image: assetUrl("images/love-story-3.jpg"),
 
     imageAlt:
       "A romantic moment from Giselle and Albert's journey",
@@ -149,7 +164,7 @@ export const loveStory = [
 export const galleryPhotos = [
   {
     id: "gallery-01",
-    src: "/images/gallery/gallery-01.jpg",
+    src: assetUrl("images/gallery/gallery-01.jpg"),
     alt: "Giselle and Albert together",
     caption: "The Beginning of Us",
     size: "large",
@@ -157,7 +172,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-02",
-    src: "/images/gallery/gallery-02.jpg",
+    src: assetUrl("images/gallery/gallery-02.jpg"),
     alt: "A beautiful memory together",
     caption: "Beautiful Moments",
     size: "normal",
@@ -165,7 +180,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-03",
-    src: "/images/gallery/gallery-03.jpg",
+    src: assetUrl("images/gallery/gallery-03.jpg"),
     alt: "Giselle and Albert enjoying a special day",
     caption: "Love & Laughter",
     size: "tall",
@@ -173,7 +188,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-04",
-    src: "/images/gallery/gallery-04.jpg",
+    src: assetUrl("images/gallery/gallery-04.jpg"),
     alt: "A romantic couple portrait",
     caption: "Forever Together",
     size: "normal",
@@ -181,7 +196,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-05",
-    src: "/images/gallery/gallery-05.jpg",
+    src: assetUrl("images/gallery/gallery-05.jpg"),
     alt: "A memorable day with Giselle and Albert",
     caption: "Our Favorite Memories",
     size: "wide",
@@ -189,7 +204,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-06",
-    src: "/images/gallery/gallery-06.jpg",
+    src: assetUrl("images/gallery/gallery-06.jpg"),
     alt: "A special romantic moment",
     caption: "Only You",
     size: "normal",
@@ -197,7 +212,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-07",
-    src: "/images/gallery/gallery-07.jpg",
+    src: assetUrl("images/gallery/gallery-07.jpg"),
     alt: "Giselle and Albert celebrating their love",
     caption: "The Best Is Yet to Come",
     size: "tall",
@@ -205,7 +220,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-08",
-    src: "/images/gallery/gallery-08.jpg",
+    src: assetUrl("images/gallery/gallery-08.jpg"),
     alt: "A cherished memory of the couple",
     caption: "Our Journey",
     size: "normal",
@@ -213,7 +228,7 @@ export const galleryPhotos = [
 
   {
     id: "gallery-09",
-    src: "/images/gallery/gallery-09.jpg",
+    src: assetUrl("images/gallery/gallery-09.jpg"),
     alt: "A beautiful moment from their love story",
     caption: "Always & Forever",
     size: "wide",
@@ -222,33 +237,45 @@ export const galleryPhotos = [
 
 /* =========================================
    PHASE 06 — WEDDING DETAILS
-   PREPARED FOR FUTURE INTEGRATION
 ========================================= */
 
 export const weddingDetails = [
   {
     id: "ceremony",
     type: "ceremony",
+
     label: "THE SACRED UNION",
     title: "The Ceremony",
+
     name: "",
     time: "",
     address: "",
-    mapUrl: "https://maps.app.goo.gl/FQK1e6ibnXhhpSoP7",
-    image: "/images/wedding-ceremony.jpg",
+
+    mapUrl:
+      "https://maps.app.goo.gl/FQK1e6ibnXhhpSoP7",
+
+    image: assetUrl("images/wedding-ceremony.jpg"),
+
     description:
       "Where two hearts become one, and a lifetime of love begins.",
   },
+
   {
     id: "reception",
     type: "reception",
+
     label: "THE CELEBRATION OF LOVE",
     title: "The Reception",
+
     name: "",
     time: "",
     address: "",
-    mapUrl: "https://maps.app.goo.gl/fU81ShddcPzoXhye8",
-    image: "/images/wedding-reception.jpg",
+
+    mapUrl:
+      "https://maps.app.goo.gl/fU81ShddcPzoXhye8",
+
+    image: assetUrl("images/wedding-reception.jpg"),
+
     description:
       "Join us for a joyful celebration filled with love, laughter, and memories.",
   },
@@ -377,160 +404,8 @@ export const entourage = {
 };
 
 /* =========================================
-   PHASE 09 — GUEST INFORMATION
-   MOCK DATA ONLY
-========================================= */
-
-export const guestInformation = {
-  dressCode: {
-    title: "Dress Code",
-    eyebrow: "DRESS TO CELEBRATE",
-    heading: "Formal & Elegant",
-    description:
-      "We would love to see our guests dressed in elegant formal attire. " +
-      "To complement our wedding celebration, we encourage you to " +
-      "wear colors inspired by our chosen palette.",
-
-    colors: [
-      {
-        id: "emerald",
-        name: "Emerald Green",
-        hex: "#0B5D46",
-      },
-      {
-        id: "sage",
-        name: "Sage Green",
-        hex: "#A3B899",
-      },
-      {
-        id: "champagne",
-        name: "Champagne",
-        hex: "#E8D5B5",
-      },
-      {
-        id: "beige",
-        name: "Warm Beige",
-        hex: "#D9C6A5",
-      },
-      {
-        id: "gold",
-        name: "Soft Gold",
-        hex: "#C9A961",
-      },
-    ],
-
-    gentlemen:
-      "Formal suits, long-sleeved polo, or barong-inspired attire.",
-
-    ladies:
-      "Elegant gowns, formal dresses, or sophisticated evening attire.",
-
-    note:
-      "Kindly reserve white and ivory for the bride.",
-  },
-
-  giftGuide: {
-    eyebrow: "WITH LOVE & GRATITUDE",
-    title: "Gift Guide",
-    description:
-      "Your presence at our wedding is the greatest gift we could ask for. " +
-      "Should you wish to honor us with a gift, a monetary contribution " +
-      "toward our future together would be sincerely appreciated.",
-
-    closing:
-      "Above all, your love, prayers, and presence mean the world to us.",
-  },
-
-  reminders: [
-    {
-      id: "arrival",
-      title: "Arrive Early",
-      description:
-        "We kindly encourage guests to arrive at least " +
-        "30 minutes before the ceremony begins.",
-      icon: "clock",
-    },
-    {
-      id: "unplugged",
-      title: "Unplugged Ceremony",
-      description:
-        "We invite you to be fully present during our vows. " +
-        "Please keep your phones silent and allow our " +
-        "photographers to capture the moment.",
-      icon: "camera",
-    },
-    {
-      id: "seating",
-      title: "Reserved Seating",
-      description:
-        "Please follow the seating arrangements prepared " +
-        "for our guests at the reception.",
-      icon: "users",
-    },
-    {
-      id: "rsvp",
-      title: "RSVP Confirmation",
-      description:
-        "Kindly confirm your attendance through our RSVP " +
-        "section so we can prepare for your arrival.",
-      icon: "heart",
-    },
-  ],
-
-  faqs: [
-    {
-      id: "faq-01",
-      question: "Can I bring a plus-one?",
-      answer:
-        "We kindly request that only guests included " +
-        "in the invitation attend our celebration. " +
-        "Thank you for understanding.",
-    },
-    {
-      id: "faq-02",
-      question: "Can I bring my children?",
-      answer:
-        "We love your little ones! However, our celebration " +
-        "will be reserved for invited guests, including " +
-        "children specifically named in the invitation.",
-    },
-    {
-      id: "faq-03",
-      question: "What time should I arrive?",
-      answer:
-        "We recommend arriving at least 30 minutes " +
-        "before the ceremony to allow enough time " +
-        "for seating and preparation.",
-    },
-    {
-      id: "faq-04",
-      question: "Can I take photos during the ceremony?",
-      answer:
-        "We kindly ask everyone to keep their phones " +
-        "away during the ceremony. You're welcome " +
-        "to take photos during the reception.",
-    },
-    {
-      id: "faq-05",
-      question: "What if I cannot attend?",
-      answer:
-        "We completely understand. Please let us know " +
-        "through our RSVP section so we can finalize " +
-        "the guest arrangements.",
-    },
-    {
-      id: "faq-06",
-      question: "Is there a parking area?",
-      answer:
-        "Parking information will be provided once " +
-        "the ceremony and reception venues are finalized.",
-    },
-  ],
-};
-
-/* =========================================
    PHASE 08 — CONFIRMED GUESTS
-   MOCK DATA
+   MOCK DATA ONLY
 ========================================= */
 
 export const mockConfirmedGuests = [
@@ -583,3 +458,171 @@ export const mockConfirmedGuests = [
     attendance: "accept",
   },
 ];
+
+/* =========================================
+   PHASE 09 — GUEST INFORMATION
+   MOCK DATA ONLY
+========================================= */
+
+export const guestInformation = {
+  dressCode: {
+    title: "Dress Code",
+    eyebrow: "DRESS TO CELEBRATE",
+    heading: "Formal & Elegant",
+
+    description:
+      "We would love to see our guests dressed in elegant formal attire. " +
+      "To complement our wedding celebration, we encourage you to " +
+      "wear colors inspired by our chosen palette.",
+
+    colors: [
+      {
+        id: "emerald",
+        name: "Emerald Green",
+        hex: "#0B5D46",
+      },
+      {
+        id: "sage",
+        name: "Sage Green",
+        hex: "#A3B899",
+      },
+      {
+        id: "champagne",
+        name: "Champagne",
+        hex: "#E8D5B5",
+      },
+      {
+        id: "beige",
+        name: "Warm Beige",
+        hex: "#D9C6A5",
+      },
+      {
+        id: "gold",
+        name: "Soft Gold",
+        hex: "#C9A961",
+      },
+    ],
+
+    gentlemen:
+      "Formal suits, long-sleeved polo, or barong-inspired attire.",
+
+    ladies:
+      "Elegant gowns, formal dresses, or sophisticated evening attire.",
+
+    note:
+      "Kindly reserve white and ivory for the bride.",
+  },
+
+  giftGuide: {
+    eyebrow: "WITH LOVE & GRATITUDE",
+    title: "Gift Guide",
+
+    description:
+      "Your presence at our wedding is the greatest gift we could ask for. " +
+      "Should you wish to honor us with a gift, a monetary contribution " +
+      "toward our future together would be sincerely appreciated.",
+
+    closing:
+      "Above all, your love, prayers, and presence mean the world to us.",
+  },
+
+  reminders: [
+    {
+      id: "arrival",
+      title: "Arrive Early",
+
+      description:
+        "We kindly encourage guests to arrive at least " +
+        "30 minutes before the ceremony begins.",
+
+      icon: "clock",
+    },
+    {
+      id: "unplugged",
+      title: "Unplugged Ceremony",
+
+      description:
+        "We invite you to be fully present during our vows. " +
+        "Please keep your phones silent and allow our " +
+        "photographers to capture the moment.",
+
+      icon: "camera",
+    },
+    {
+      id: "seating",
+      title: "Reserved Seating",
+
+      description:
+        "Please follow the seating arrangements prepared " +
+        "for our guests at the reception.",
+
+      icon: "users",
+    },
+    {
+      id: "rsvp",
+      title: "RSVP Confirmation",
+
+      description:
+        "Kindly confirm your attendance through our RSVP " +
+        "section so we can prepare for your arrival.",
+
+      icon: "heart",
+    },
+  ],
+
+  faqs: [
+    {
+      id: "faq-01",
+      question: "Can I bring a plus-one?",
+
+      answer:
+        "We kindly request that only guests included " +
+        "in the invitation attend our celebration. " +
+        "Thank you for understanding.",
+    },
+    {
+      id: "faq-02",
+      question: "Can I bring my children?",
+
+      answer:
+        "We love your little ones! However, our celebration " +
+        "will be reserved for invited guests, including " +
+        "children specifically named in the invitation.",
+    },
+    {
+      id: "faq-03",
+      question: "What time should I arrive?",
+
+      answer:
+        "We recommend arriving at least 30 minutes " +
+        "before the ceremony to allow enough time " +
+        "for seating and preparation.",
+    },
+    {
+      id: "faq-04",
+      question: "Can I take photos during the ceremony?",
+
+      answer:
+        "We kindly ask everyone to keep their phones " +
+        "away during the ceremony. You're welcome " +
+        "to take photos during the reception.",
+    },
+    {
+      id: "faq-05",
+      question: "What if I cannot attend?",
+
+      answer:
+        "We completely understand. Please let us know " +
+        "through our RSVP section so we can finalize " +
+        "the guest arrangements.",
+    },
+    {
+      id: "faq-06",
+      question: "Is there a parking area?",
+
+      answer:
+        "Parking information will be provided once " +
+        "the ceremony and reception venues are finalized.",
+    },
+  ],
+};
